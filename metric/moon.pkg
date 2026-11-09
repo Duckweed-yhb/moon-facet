@@ -1,0 +1,7 @@
+///|
+/// metric — 结构度量：篇幅占比、子节点数、深度。
+supported_targets = "wasm+wasm-gc+js+native"
+
+import {
+  "Duckweed/moon-facet/model" @model,
+}

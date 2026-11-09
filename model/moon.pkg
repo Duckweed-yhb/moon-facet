@@ -1,0 +1,6 @@
+///|
+/// model — 节点池、图与对齐表。
+///
+/// 设计前提：节点属于池，不属于图。一张图只持有节点 id 的引用，
+/// 所以同一个节点可以出现在多张图里，由 `Alignment` 记录它在本图中的位置。
+supported_targets = "wasm+wasm-gc+js+native"

@@ -1,0 +1,9 @@
+pkgtype(kind: "executable")
+supported_targets = "wasm+wasm-gc+js+native"
+
+import {
+  "Duckweed/moon-facet/parse" @parse,
+  "Duckweed/moon-facet/model" @model,
+  "Duckweed/moon-facet/metric" @metric,
+  "Duckweed/moon-facet/render" @render,
+}

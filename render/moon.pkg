@@ -1,0 +1,7 @@
+///|
+/// render — ASCII 树输出。
+supported_targets = "wasm+wasm-gc+js+native"
+
+import {
+  "Duckweed/moon-facet/model" @model,
+}

@@ -1,0 +1,3 @@
+///|
+/// parse — Markdown 标题与每节字数。
+supported_targets = "wasm+wasm-gc+js+native"
