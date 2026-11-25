@@ -1,22 +1,12 @@
 # moon-facet
 
-Multi-view hierarchical structure model for MoonBit.
+A MoonBit prototype for keeping several outlines over a shared pool of nodes.
+Each outline has its own parent links and order. A caller can record where a
+known node occurs in another outline and look up that occurrence by ID.
 
-A **facet** is one view of a structure: a book's chapters, the notes you took
-while reading it, the plan you derived from it. They are different graphs over
-**the same node pool**. `moon-facet` owns the pool, the graphs, and the
-alignment table that says "this node is here in graph A and there in graph B".
-
-It is **not** a mind-map tool, not a note-taking vault, and not a summarizer.
-It computes structure and metrics; drawing and interaction are left to the
-caller (`Milky2018/diago` renders graphs, if you need SVG).
-
-## Why not `md-outline`?
-
-`md-outline` reads one Markdown file and gives you its section tree. That is a
-single view. `moon-facet` is about several views of one object: nodes are
-shared, graphs can be nested, and the alignment table keeps them consistent.
-If you only need a table of contents, use `md-outline`.
+The runnable example reads one Markdown document. It prints the heading tree,
+section lengths and depths. For a standalone Markdown table of contents or a
+section reader, see [md-outline](https://github.com/peter-jerry-ye/md-outline).
 
 ## Model
 
@@ -61,9 +51,18 @@ lengths, share of the whole, depth, and an ASCII tree:
 
 - 20 tests, `moon check --target wasm-gc --deny-warn` clean.
 - Implemented: pool/graph/alignment, Markdown parsing, metrics, ASCII render.
-- Planned: multi-graph alignment demo, nested graphs, serializable intermediate
-  format, EPUB/PDF outline parsing (not before the above), interactive HTML
-  export (pan/zoom) — none of these are claimed as done.
+
+## Direction under consideration
+
+A documentation maintainer may have two manuals that organize the same topics
+differently. When the source manual gains a topic, the maintainer needs to know
+whether the companion manual covers it. A possible next step is a coverage
+report that uses explicit topic IDs and prints the file and heading path for
+each occurrence. The current demo does not perform this comparison.
+
+Before building it, we need a real pair of manuals and a known coverage gap.
+If a list of IDs and a spreadsheet already answer the maintainer's question,
+the extra hierarchy would add maintenance work without improving the result.
 
 ## License
 
